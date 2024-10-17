@@ -7,8 +7,11 @@ public class QuickTimeManager : MonoBehaviour
     [SerializeField]
     float qtChance = 0.20f;
     [SerializeField]
-    float qtFreq = 0.01f;
+    float qtPeriod = 100f;
+    [SerializeField]
+    GameObject QuickTimeEvent;
 
+    private int timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +22,16 @@ public class QuickTimeManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void FixedUpdate()
+    {
+        if(timer++ >= qtPeriod)
+        {
+            if(Random.Range(0,1) < qtChance)
+            {
+
+            }
+        }
     }
 }
