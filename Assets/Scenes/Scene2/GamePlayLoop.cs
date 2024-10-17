@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class GamePlayLoop : MonoBehaviour
 {
     [SerializeField]
     int winTimer = 50000;
@@ -13,9 +13,7 @@ public class Player : MonoBehaviour
     int sleepyRate = 1;
     [SerializeField]
     string loseScene = "", winScene = "";
-    [SerializeField]
-    float qtChance = 0.20f;
-    float qtFreq = 0.01f;
+    
 
     // Start is called before the first frame update
     void Start()
