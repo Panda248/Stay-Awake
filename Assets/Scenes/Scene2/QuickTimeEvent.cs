@@ -32,8 +32,9 @@ public class QuickTimeEvent : MonoBehaviour
         if(Input.GetKeyDown(key))
         {
             Debug.Log("HELLOOO???");
-            GamePlayLoop.sleepiness += wakePower;
+            GamePlayLoop.ReduceSleepiness(wakePower);
             animator.SetBool("Exit", true);
+            Destroy(gameObject, 1);//Magic number :(
         }
     }
 

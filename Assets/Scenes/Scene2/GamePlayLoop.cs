@@ -8,25 +8,19 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField]
     public int winTimer = 50000;
     [SerializeField]
-    public int sleepiness = 10000;
+    public int maxSleepiness = 10000;
     [SerializeField]
     public int sleepyRate = 1;
     [SerializeField]
     string loseScene = "", winScene = "";
-    
 
-    // Start is called before the first frame update
-    void Start()
+    private int sleepiness;
+
+    private void Awake()
     {
-        
-    }
+        sleepiness = maxSleepiness;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
-
     void FixedUpdate()
     {
 
@@ -43,5 +37,14 @@ public class GamePlayLoop : MonoBehaviour
         {
             SceneManager.LoadScene(winScene);
         }
+    }
+    
+    public void ReduceSleepiness(int amount)
+    {
+        sleepiness += amount;
+    }
+    public float GetSleepyValue()
+    {
+        return ((float)maxSleepiness / (float)sleepiness);
     }
 }

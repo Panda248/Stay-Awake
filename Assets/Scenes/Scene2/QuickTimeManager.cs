@@ -28,11 +28,12 @@ public class QuickTimeManager : MonoBehaviour
     {
         if(timer++ >= qtPeriod)
         {
-            if(Random.Range(0,1) < qtChance)
+            if(Random.Range(0,1) <= qtChance)
             {
                 QuickTimeEvent newQT = Instantiate<QuickTimeEvent>(QuickTimeEvent);
                 newQT.key = RandomKey();
                 newQT.transform.SetParent(gameObject.transform);
+                newQT.gameObject.SetActive(true);
             }
             timer = 0;
         }
