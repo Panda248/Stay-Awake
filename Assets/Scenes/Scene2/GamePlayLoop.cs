@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class GamePlayLoop : MonoBehaviour
 {
     [SerializeField]
-    int winTimer = 50000;
+    public int winTimer = 50000;
     [SerializeField]
-    int sleepiness = 10000;
+    public int sleepiness = 10000;
     [SerializeField]
-    int sleepyRate = 1;
+    public int sleepyRate = 1;
     [SerializeField]
     string loseScene = "", winScene = "";
     
@@ -37,7 +37,6 @@ public class GamePlayLoop : MonoBehaviour
         else
         {
             sleepiness -= sleepyRate;
-            Debug.Log(sleepiness);
         }
 
         if(winTimer-- <= 0)

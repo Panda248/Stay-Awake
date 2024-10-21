@@ -9,7 +9,7 @@ public class QuickTimeManager : MonoBehaviour
     [SerializeField]
     float qtPeriod = 100f;
     [SerializeField]
-    GameObject QuickTimeEvent;
+    QuickTimeEvent QuickTimeEvent;
 
     private int timer = 0;
     // Start is called before the first frame update
@@ -30,8 +30,16 @@ public class QuickTimeManager : MonoBehaviour
         {
             if(Random.Range(0,1) < qtChance)
             {
-
+                QuickTimeEvent newQT = Instantiate<QuickTimeEvent>(QuickTimeEvent);
+                newQT.key = RandomKey();
+                newQT.transform.SetParent(gameObject.transform);
             }
+            timer = 0;
         }
+    }
+
+    private KeyCode RandomKey()
+    {
+        return KeyCode.A;
     }
 }
