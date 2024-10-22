@@ -25,6 +25,7 @@ public class QuickTimeEvent : MonoBehaviour
         image = GetComponent<Image>();
         animator = GetComponent<Animator>();
     }
+    //TODO ASSIGN IMAGE BASED OFF KEY
     
 
     private void Update()

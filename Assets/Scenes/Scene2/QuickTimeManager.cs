@@ -41,6 +41,6 @@ public class QuickTimeManager : MonoBehaviour
 
     private KeyCode RandomKey()
     {
-        return KeyCode.A;
+        return KeyCode.Alpha2;//TODO MAKE METHOD
     }
 }
