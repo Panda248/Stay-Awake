@@ -152,10 +152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winTimer: 50000
-  maxSleepiness: 10000
+  maxSleepiness: 5000
   sleepyRate: 1
   loseScene: Scene3
   winScene: Scene4
+  sleepiness: 0
 --- !u!4 &240247300
 Transform:
   m_ObjectHideFlags: 0
@@ -360,8 +361,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 240247300}
-  - {fileID: 1488562828}
   - {fileID: 1510299396}
+  - {fileID: 1488562828}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

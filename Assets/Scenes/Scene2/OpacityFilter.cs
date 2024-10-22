@@ -18,6 +18,7 @@ public class OpacityFilter : MonoBehaviour
     void Update()
     {
         image.color = new Color(0, 0, 0, gamePlayLoop.GetSleepyValue());
+        Debug.Log(image.color.a);
 
     }
 }

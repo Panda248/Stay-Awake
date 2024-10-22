@@ -14,6 +14,7 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField]
     string loseScene = "", winScene = "";
 
+    [SerializeField]
     private int sleepiness;
 
     private void Awake()
@@ -45,6 +46,6 @@ public class GamePlayLoop : MonoBehaviour
     }
     public float GetSleepyValue()
     {
-        return ((float)maxSleepiness / (float)sleepiness);
+        return 1 - ((float)sleepiness / ((float)maxSleepiness));
     }
 }
