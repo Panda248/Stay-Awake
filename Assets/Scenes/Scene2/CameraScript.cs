@@ -7,8 +7,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField]
     GamePlayLoop GamePlayLoop;
-    float amplitude = 5;
-    int timer = 0;
+    float amplitude = 0.01f;
+    float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +16,11 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
-        timer++;
-        Quaternion deltaRotate = Quaternion.Euler(GamePlayLoop.GetSleepyValue()*amplitude*Mathf.Sin(timer/10), transform.rotation.y, transform.rotation.z);
-        Debug.Log(deltaRotate.x);
-        transform.rotation = deltaRotate;
+        timer+= Time.unscaledDeltaTime;
+        Quaternion deltaRotate = Quaternion.Euler(Mathf.Exp(GamePlayLoop.GetSleepyValue())*amplitude*Mathf.Cos(timer), 0, 0);
+
+        transform.Rotate(deltaRotate.eulerAngles);
     }
 }

@@ -19591,7 +19591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29753fa3038e00542a516276f3328a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GamePlayLoop: {fileID: 0}
+  GamePlayLoop: {fileID: 240247299}
 --- !u!95 &1583829990
 Animator:
   serializedVersion: 5
