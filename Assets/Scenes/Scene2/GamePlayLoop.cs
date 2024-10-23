@@ -17,6 +17,7 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField]
     private int sleepiness;
 
+    int deltaSleepy = 0;
     private void Awake()
     {
         sleepiness = maxSleepiness;
@@ -24,14 +25,21 @@ public class GamePlayLoop : MonoBehaviour
     }
     void FixedUpdate()
     {
-
-        if (sleepiness <= 0)
+        if (deltaSleepy != 0)
         {
-            SceneManager.LoadScene(loseScene);
+            sleepiness += sleepyRate;
+            deltaSleepy -= sleepyRate;
         }
         else
         {
-            sleepiness -= sleepyRate;
+            if (sleepiness <= 0)
+            {
+                SceneManager.LoadScene(loseScene);
+            }
+            else
+            {
+                sleepiness -= sleepyRate;
+            }
         }
 
         if(winTimer-- <= 0)
@@ -42,7 +50,7 @@ public class GamePlayLoop : MonoBehaviour
     
     public void ReduceSleepiness(int amount)
     {
-        sleepiness += amount;
+        deltaSleepy += amount;
     }
     public float GetSleepyValue()
     {

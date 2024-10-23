@@ -17,7 +17,7 @@ public class OpacityFilter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        image.color = new Color(0, 0, 0, gamePlayLoop.GetSleepyValue());
+        image.color = new Color(0, 0, 0, Mathf.Sqrt(gamePlayLoop.GetSleepyValue()));
         Debug.Log(image.color.a);
 
     }
