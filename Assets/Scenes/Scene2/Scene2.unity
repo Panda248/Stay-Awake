@@ -2521,11 +2521,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winTimer: 50000
-  maxSleepiness: 1000
+  maxSleepiness: 2000
   sleepyRate: 1
   loseScene: Scene3
   winScene: Scene4
   sleepiness: 0
+  deltaSleepEase: 10
 --- !u!4 &240247300
 Transform:
   m_ObjectHideFlags: 0
@@ -19592,6 +19593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GamePlayLoop: {fileID: 240247299}
+  xAmplitude: 0.01
+  xAmplitudeGrowthRate: 0.5
+  yAmplitude: 0.001
 --- !u!95 &1583829990
 Animator:
   serializedVersion: 5
@@ -27061,8 +27065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccd595638fa67a45ae30c8951c483bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1000
-  wakePower: 100
+  timer: 200
+  wakePower: 500
   key: 50
   GamePlayLoop: {fileID: 240247299}
 --- !u!95 &1861846208535916844
