@@ -13,7 +13,7 @@ public class CharMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * 2 * Time.deltaTime);
+        transform.Translate(Vector3.forward * 1 * Time.deltaTime);
     }
 
     public void OnTriggerEnter(Collider other)
