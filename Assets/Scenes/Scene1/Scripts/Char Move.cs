@@ -16,11 +16,12 @@ public class CharMove : MonoBehaviour
         transform.Translate(Vector3.forward * 2 * Time.deltaTime);
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "AJ")
+        if(other.gameObject.tag == "AJ")
         {
-            GameBehavior.Instance.sceneToMoveTo;
+            GameBehavior.Instance.sceneToMoveTo();
+            Debug.Log("Hello World, Welcome to C#!");
         }
     }
 
