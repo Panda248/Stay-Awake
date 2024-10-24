@@ -34,8 +34,8 @@ public class QuickTimeEvent : MonoBehaviour
         {
             Debug.Log("HELLOOO???");
             GamePlayLoop.ReduceSleepiness(wakePower);
-            animator.SetBool("Exit", true);
-            Destroy(gameObject, 1);//Magic number :(
+            animator.Play("QuickTimeExit");
+            Destroy(gameObject, 0.5f);//Magic number :(
         }
     }
 
@@ -44,7 +44,8 @@ public class QuickTimeEvent : MonoBehaviour
     {
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("QuickTimeExit") && timer-- <= 0)
         {
-            Destroy(gameObject);
+            animator.SetBool("Expire", true);
+            Destroy(gameObject, 0.5f);
         }
     }
 }
