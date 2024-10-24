@@ -13,6 +13,15 @@ public class CharMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.forward * 2 * Time.deltaTime);
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "AJ")
+        {
+            GameBehavior.Instance.sceneToMoveTo;
+        }
+    }
+
 }
