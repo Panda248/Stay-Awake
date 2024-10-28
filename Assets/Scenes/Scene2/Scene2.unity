@@ -2520,11 +2520,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0fe85261e977f47b79c86cc9c0d8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winTimer: 50000
+  winTimer: 10000
   maxSleepiness: 2000
   sleepyRate: 1
-  loseScene: Scene3
-  winScene: Scene4
+  loseScene: Scene4
+  winScene: Scene3
   sleepiness: 0
   deltaSleepEase: 10
 --- !u!4 &240247300
@@ -18745,7 +18745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qtChance: 1
-  qtPeriod: 500
+  qtPeriod: 200
   QuickTimeEvent: {fileID: 1467078887491510105}
 --- !u!4 &1488562828
 Transform:

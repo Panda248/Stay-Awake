@@ -30,10 +30,14 @@ public class GamePlayLoop : MonoBehaviour
     void FixedUpdate()
     {
         if (deltaSleepy >= sleepyRate*2)
-        {
+        {        
             sleepiness += (int)(deltaSleepy/deltaSleepEase);
             deltaSleepy -= deltaSleepy / deltaSleepEase;
-            Debug.Log(deltaSleepy);
+            if (sleepiness > maxSleepiness)
+            {
+                sleepiness = maxSleepiness;
+                deltaSleepy = 0;
+            }
         }
         else
         {
