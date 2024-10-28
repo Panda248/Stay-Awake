@@ -2520,7 +2520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0fe85261e977f47b79c86cc9c0d8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winTimer: 10000
+  winTimer: 2000
   maxSleepiness: 2000
   sleepyRate: 1
   loseScene: Scene4
@@ -18745,7 +18745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qtChance: 1
-  qtPeriod: 200
+  qtPeriod: 500
   QuickTimeEvent: {fileID: 1467078887491510105}
 --- !u!4 &1488562828
 Transform:
@@ -27437,7 +27437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccd595638fa67a45ae30c8951c483bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 200
+  timer: 250
   wakePower: 500
   key: 50
   GamePlayLoop: {fileID: 240247299}
