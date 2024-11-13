@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharMove : MonoBehaviour
 {
+
+    Vector3 temPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +16,18 @@ public class CharMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+        transform.Translate(Vector3.forward * 10 * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            Vector2 right = new Vector2(1, 0);
+            transform.Translate(right * 7 * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            Vector2 left = new Vector2(-1, 0);
+            transform.Translate(left * 7 * Time.deltaTime);
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -24,5 +38,4 @@ public class CharMove : MonoBehaviour
             Debug.Log("Hello World, Welcome to C#!");
         }
     }
-
 }
