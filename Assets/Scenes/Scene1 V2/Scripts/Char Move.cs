@@ -6,6 +6,7 @@ public class CharMove : MonoBehaviour
 {
 
     Vector3 temPos;
+    int speed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class CharMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * 10 * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -32,10 +33,23 @@ public class CharMove : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "AJ")
+        /*if(other.gameObject.tag == "AJ")
         {
             GameBehavior.Instance.sceneToMoveTo();
             Debug.Log("Hello World, Welcome to C#!");
+        }*/
+
+        if (other.gameObject.tag == "AJ")
+        {
+            speed = 5;
+            StartCoroutine(ResetSpeed());
         }
+
+        IEnumerator ResetSpeed()
+        {
+            yield return new WaitForSeconds(2);
+            speed = 10;
+        }
+
     }
 }
