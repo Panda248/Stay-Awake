@@ -15,7 +15,6 @@ public class ScooterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 left = new Vector2(-1, 0);
-        transform.Translate(left * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }

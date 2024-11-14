@@ -36,6 +36,6 @@ public class Timer : MonoBehaviour
         int minutes = (int)(timeInSeconds / 60) % 60;
         int seconds = (int)timeInSeconds % 60;
 
-        timerText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
+        timerText.text = string.Format("{0:00}:{1:00}:{2:00} AM", hours, minutes, seconds);
     }
 }

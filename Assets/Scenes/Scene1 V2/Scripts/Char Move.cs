@@ -6,7 +6,7 @@ public class CharMove : MonoBehaviour
 {
 
     Vector3 temPos;
-    int speed = 10;
+    int speed = 15;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +48,7 @@ public class CharMove : MonoBehaviour
         IEnumerator ResetSpeed()
         {
             yield return new WaitForSeconds(2);
-            speed = 10;
+            speed = 15;
         }
 
     }
