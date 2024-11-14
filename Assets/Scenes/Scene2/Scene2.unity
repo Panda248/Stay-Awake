@@ -14021,6 +14021,7 @@ GameObject:
   - component: {fileID: 1141527372}
   - component: {fileID: 1141527371}
   - component: {fileID: 1141527370}
+  - component: {fileID: 1141527374}
   m_Layer: 0
   m_Name: MouseOverEvent
   m_TagString: Untagged
@@ -14118,6 +14119,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141527368}
   m_CullTransparentMesh: 1
+--- !u!114 &1141527374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141527368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141527371}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: exit
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1154335258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19988,11 +20018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29753fa3038e00542a516276f3328a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GamePlayLoop: {fileID: 240247299}
-  xAmplitude: 0.01
-  xAmplitudeGrowthRate: 0.5
-  yAmplitude: 0.001
-  timer: 0
 --- !u!95 &1583829990
 Animator:
   serializedVersion: 5

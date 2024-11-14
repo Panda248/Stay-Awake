@@ -4,23 +4,42 @@ using UnityEngine;
 using UnityEngine.UI; 
 public class MouseOverEvent : MonoBehaviour
 {
-    float alphaThreshold = 0.1f;
+    [SerializeField]
+    int timer = 100;
+
+    [SerializeField]
+    int wakePower = 100;
+
+    [SerializeField]
+    GamePlayLoop GamePlayLoop;
+
+    private float alphaThreshold = 0.1f;
 
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Image>().alphaHitTestMinimumThreshold = alphaThreshold;
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Exit"))
+        if(timer-- <= 0)
         {
-            Destroy(gameObject, 0.1f);
+            animator.SetTrigger("expire");
         }
+    }
+
+    void onCompletion()
+    {
+        GamePlayLoop.ReduceSleepiness(wakePower);
+        onExpire();
+    }
+
+    void onExpire()
+    {
+        Destroy(gameObject);
     }
 
     
