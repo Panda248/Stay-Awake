@@ -7,6 +7,7 @@ public class CharMove : MonoBehaviour
 
     Vector3 temPos;
     int speed = 15;
+    bool slowed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +40,10 @@ public class CharMove : MonoBehaviour
             Debug.Log("Hello World, Welcome to C#!");
         }*/
 
-        if (other.gameObject.tag == "AJ")
+        if (other.gameObject.tag == "AJ" && !slowed)
         {
             speed = 5;
+            slowed = true;
             StartCoroutine(ResetSpeed());
         }
 
@@ -49,6 +51,7 @@ public class CharMove : MonoBehaviour
         {
             yield return new WaitForSeconds(2);
             speed = 15;
+            slowed = false;
         }
 
     }
