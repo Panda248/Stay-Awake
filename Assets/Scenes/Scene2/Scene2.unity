@@ -2655,12 +2655,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winTimer: 5500
-  maxSleepiness: 100
+  maxSleepiness: 2000
   sleepyRate: 1
   loseScene: Scene4
   winScene: Scene3
   dreamScene: DreamScene
-  dreamChance: 1
+  dreamChance: 0.3
   sleepiness: 0
   deltaSleepEase: 10
 --- !u!4 &240247300
