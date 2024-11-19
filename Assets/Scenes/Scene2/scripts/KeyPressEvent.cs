@@ -17,6 +17,12 @@ public class QuickTimeEvent : MonoBehaviour
     [SerializeField]
     GamePlayLoop GamePlayLoop;
 
+    [SerializeField]
+    List<KeyCode> possibleKeys = new();
+
+    [SerializeField]
+    List<Sprite> keySprites = new();
+
     private Animator animator;
     private Image image;
 
@@ -24,6 +30,12 @@ public class QuickTimeEvent : MonoBehaviour
     {
         image = GetComponent<Image>();
         animator = GetComponent<Animator>();
+
+        transform.position = new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), 0);
+
+        int index = Random.Range(0, keySprites.Count);
+        image.sprite = keySprites[index];
+        key = possibleKeys[index];
     }
     //TODO ASSIGN IMAGE BASED OFF KEY
     
@@ -34,8 +46,8 @@ public class QuickTimeEvent : MonoBehaviour
         {
             Debug.Log("HELLOOO???");
             GamePlayLoop.ReduceSleepiness(wakePower);
-            animator.Play("QuickTimeExit");
-            Destroy(gameObject, 0.5f);//Magic number :(
+            animator.SetBool("Exit", true);
+            Destroy(gameObject, 1);//Magic number :(
         }
     }
 
@@ -44,8 +56,7 @@ public class QuickTimeEvent : MonoBehaviour
     {
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("QuickTimeExit") && timer-- <= 0)
         {
-            animator.SetBool("Expire", true);
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject);
         }
     }
 }

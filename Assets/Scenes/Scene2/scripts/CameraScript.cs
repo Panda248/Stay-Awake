@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CameraScript : MonoBehaviour
 {
     [SerializeField]
     GamePlayLoop GamePlayLoop;
