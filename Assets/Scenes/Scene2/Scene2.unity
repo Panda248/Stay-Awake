@@ -19325,14 +19325,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488562826}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f3ed252fb686604da6e36f1b8ad7d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qtChance: 1
   qtPeriod: 500
-  QuickTimeEvent: {fileID: 1467078887491510105}
+  events:
+  - {fileID: 2767640708578862871}
+  - {fileID: 1141527368}
+  - {fileID: 2033465682}
+  chances:
+  - 0.33
+  - 0.33
+  - 0.33
 --- !u!4 &1488562828
 Transform:
   m_ObjectHideFlags: 0
@@ -20465,6 +20471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29753fa3038e00542a516276f3328a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GamePlayLoop: {fileID: 240247299}
+  xAmplitude: 0.01
+  xAmplitudeGrowthRate: 0.5
+  yAmplitude: 0.001
 --- !u!95 &1583829990
 Animator:
   serializedVersion: 5
@@ -26382,7 +26392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2033465683
 Transform:
   m_ObjectHideFlags: 0
@@ -26415,6 +26425,12 @@ MonoBehaviour:
   timer: 500
   wakePower: 100
   GamePlayLoop: {fileID: 240247299}
+  texts:
+  - Llorem Ipsum
+  - Yes Sir
+  - 1+1=2
+  - The Alamo
+  - Pol Pot
 --- !u!95 &2033465685
 Animator:
   serializedVersion: 5
@@ -28303,6 +28319,13 @@ MonoBehaviour:
   wakePower: 1000
   key: 50
   GamePlayLoop: {fileID: 240247299}
+  possibleKeys: 3100000032000000330000003400000035000000
+  keySprites:
+  - {fileID: 21300000, guid: 1754a6f300c4ca043b8207b9383cb9f4, type: 3}
+  - {fileID: 21300000, guid: a6991b51352572247b834e976b3b9b6f, type: 3}
+  - {fileID: 21300000, guid: c54d2827da9ba7a458a5c2838343e8d3, type: 3}
+  - {fileID: 21300000, guid: 86f18c385de64d24e9d67d88c7f5e195, type: 3}
+  - {fileID: 21300000, guid: 20d36defcb239cc458e7a3f314417315, type: 3}
 --- !u!95 &1861846208535916844
 Animator:
   serializedVersion: 5

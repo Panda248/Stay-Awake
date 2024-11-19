@@ -14,17 +14,30 @@ public class TextEvent : MonoBehaviour
     [SerializeField]
     GamePlayLoop GamePlayLoop;
 
+    [SerializeField]
+    List<string> texts = new List<string>()
+    {
+        "Llorem Ipsum",
+        "Yes Sir",
+        "1+1=2",
+        "Okay",
+        "Pol Pot"
+    };
+
     private TMP_InputField inputField;
     private TextMeshProUGUI textMesh;
     private Animator animator;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         inputField = transform.GetComponentInChildren<TMP_InputField>();
         textMesh = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         animator = GetComponent<Animator>();
-        
+
+        transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), 0);
+
+        textMesh.text = texts[Random.Range(0, texts.Count)];
     }
 
     // Update is called once per frame

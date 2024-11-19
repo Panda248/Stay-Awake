@@ -17,9 +17,11 @@ public class MouseOverEvent : MonoBehaviour
 
     private Animator animator;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
+
+        transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), 0);
     }
 
     // Update is called once per frame
