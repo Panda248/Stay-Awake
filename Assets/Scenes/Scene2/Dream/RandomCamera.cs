@@ -12,7 +12,7 @@ public class RandomCamera : MonoBehaviour
     void Start()
     {
         cam = GetComponent<Camera>();
-        if (Random.value < orthoChance)
+        if (Random.Range(0f, 1f) < orthoChance)
         {
             cam.orthographic = true;
         }
