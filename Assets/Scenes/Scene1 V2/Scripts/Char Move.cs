@@ -34,11 +34,11 @@ public class CharMove : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        /*if(other.gameObject.tag == "AJ")
+        if(other.gameObject.tag == "Building")
         {
             GameBehavior.Instance.sceneToMoveTo();
             Debug.Log("Hello World, Welcome to C#!");
-        }*/
+        }
 
         if (other.gameObject.tag == "AJ" && !slowed)
         {
