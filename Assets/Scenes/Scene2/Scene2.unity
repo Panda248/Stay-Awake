@@ -2654,8 +2654,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0fe85261e977f47b79c86cc9c0d8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winTimer: 5500
-  maxSleepiness: 2000
+  winTimer: 2000
+  maxSleepiness: 1500
   sleepyRate: 1
   loseScene: Scene4
   winScene: Scene3
@@ -14331,7 +14331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 100
-  wakePower: 100
+  wakePower: 1000
   GamePlayLoop: {fileID: 240247299}
 --- !u!95 &1141527371
 Animator:
@@ -19332,7 +19332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3ed252fb686604da6e36f1b8ad7d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qtPeriod: 500
+  qtPeriod: 300
   events:
   - {fileID: 2767640708578862871}
   - {fileID: 1141527368}
@@ -26425,7 +26425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 500
-  wakePower: 100
+  wakePower: 1000
   GamePlayLoop: {fileID: 240247299}
   texts:
   - Llorem Ipsum
