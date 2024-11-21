@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharMove : MonoBehaviour
 {
-
+    
     Vector3 temPos;
     int speed = 15;
     bool slowed = false;
@@ -42,9 +42,11 @@ public class CharMove : MonoBehaviour
 
         if (other.gameObject.tag == "AJ" && !slowed)
         {
+            
             speed = 5;
             slowed = true;
             StartCoroutine(ResetSpeed());
+
         }
 
         IEnumerator ResetSpeed()
