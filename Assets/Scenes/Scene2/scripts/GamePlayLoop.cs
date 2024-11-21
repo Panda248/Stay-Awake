@@ -12,7 +12,10 @@ public class GamePlayLoop : MonoBehaviour
     [SerializeField]
     public int sleepyRate = 1;
     [SerializeField]
-    string loseScene = "", winScene = "";
+    string loseScene = "", winScene = "", dreamScene = "";
+
+    [SerializeField]
+    float dreamChance = 0.3f;
 
     [SerializeField]
     private int sleepiness;
@@ -43,7 +46,14 @@ public class GamePlayLoop : MonoBehaviour
         {
             if (sleepiness <= 0)
             {
-                SceneManager.LoadScene(loseScene);
+                if (Random.Range(0f, 1f) < dreamChance)
+                {
+                    SceneManager.LoadScene(dreamScene);
+                }
+                else
+                {
+                    SceneManager.LoadScene(loseScene);
+                }
             }
             else
             {
