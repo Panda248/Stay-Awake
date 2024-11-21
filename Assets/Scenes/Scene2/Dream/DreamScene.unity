@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928062c085ecaea4db22747fa332dd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orthoChance: 0.5
+  orthoChance: 0
 --- !u!1001 &25030653
 PrefabInstance:
   m_ObjectHideFlags: 0
