@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class MouseOverExit : StateMachineBehaviour
+public class QuickTimeExit  : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //
-    //}
-
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Checking state");
         Debug.Log(stateInfo.ToString());
@@ -22,12 +16,18 @@ public class MouseOverExit : StateMachineBehaviour
             animator.gameObject.SendMessage("onCompletion");
 
         }
-        if (stateInfo.IsName("expire"))
+        else if (stateInfo.IsName("expire"))
         {
             Debug.Log("Expiring");
             animator.gameObject.SendMessage("onExpire");
         }
     }
+
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

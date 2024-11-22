@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuickTimeEvent : MonoBehaviour
+public class KeyPressEvent : QuickTimeEvent
 {
-    [SerializeField]
-    int timer = 100;
-
-    [SerializeField]
-    int wakePower = 100;
+    
 
     [SerializeField]
     public KeyCode key = KeyCode.Alpha2;
 
-    [SerializeField]
-    GamePlayLoop GamePlayLoop;
+    
 
     [SerializeField]
     List<KeyCode> possibleKeys = new();
@@ -23,13 +18,11 @@ public class QuickTimeEvent : MonoBehaviour
     [SerializeField]
     List<Sprite> keySprites = new();
 
-    private Animator animator;
     private Image image;
 
     private void Awake()
     {
         image = GetComponent<Image>();
-        animator = GetComponent<Animator>();
 
         transform.position = new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), 0);
 
@@ -42,21 +35,18 @@ public class QuickTimeEvent : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(key))
+        if(Input.GetKeyDown(key) && active)
         {
-            Debug.Log("HELLOOO???");
-            GamePlayLoop.ReduceSleepiness(wakePower);
-            animator.SetBool("Exit", true);
-            Destroy(gameObject, 1);//Magic number :(
+            playWin();
         }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("QuickTimeExit") && timer-- <= 0)
+        if (timer-- <= 0 && active)
         {
-            Destroy(gameObject);
+            playLose();
         }
     }
 }
