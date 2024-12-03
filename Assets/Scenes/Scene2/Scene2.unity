@@ -19443,9 +19443,13 @@ MonoBehaviour:
   - 0.33
   - 0.33
   audioClipList:
-  - {fileID: 8300000, guid: f57bb3480ef56e64f8f587bdbc7d4bb5, type: 3}
-  - {fileID: 8300000, guid: 3fa27109ccf59fa43be3946d4f859cc2, type: 3}
-  - {fileID: 8300000, guid: 7adef3667a2f8f14fb98a95e39d326b7, type: 3}
+  - {fileID: 8300000, guid: 0198c66c36ee81f49935d8b53688f292, type: 3}
+  - {fileID: 8300000, guid: 9bdf8ffb9bea7164b9c58e16a87a6f84, type: 3}
+  - {fileID: 8300000, guid: d7668f62d2ec9564eabf199c27b49f40, type: 3}
+  - {fileID: 8300000, guid: 3deb7632b2ffbb84d9602570a0befc07, type: 3}
+  - {fileID: 8300000, guid: 0b653e8ead4fcf34588bab111b8a7082, type: 3}
+  - {fileID: 8300000, guid: df48c84b5f2215d4c8cbaffd2933b23e, type: 3}
+  - {fileID: 8300000, guid: c25c7f89931d41344a5a6ef205bb225c, type: 3}
 --- !u!4 &1488562828
 Transform:
   m_ObjectHideFlags: 0
