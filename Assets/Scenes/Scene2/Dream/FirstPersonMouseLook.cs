@@ -20,7 +20,14 @@ public class FirstPersonMouseLook : MonoBehaviour
         rotation.y += Input.GetAxis("Mouse X");
         rbRotation.y += Input.GetAxis("Mouse X");
         rotation.x += -Input.GetAxis("Mouse Y");
-
+        if(rotation.x*speed > 90)
+        {
+            rotation.x = 90/speed;
+        }
+        if(rotation.x*speed < -90)
+        {
+            rotation.x = -90/speed;
+        }
         transform.eulerAngles = (Vector2)rotation * speed;
         transform.parent.transform.eulerAngles = rbRotation * speed; 
     }
