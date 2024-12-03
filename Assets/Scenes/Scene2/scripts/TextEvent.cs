@@ -24,7 +24,7 @@ public class TextEvent : QuickTimeEvent
         inputField = transform.GetComponentInChildren<TMP_InputField>();
         textMesh = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 
-        transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), 0);
+        transform.position = new Vector3(Random.Range(0,Screen.width*0.8f), Random.Range(0,Screen.height*0.8f), 0);
 
         textMesh.text = texts[Random.Range(0, texts.Count)];
     }

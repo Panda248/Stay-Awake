@@ -11,7 +11,8 @@ public class MouseOverEvent : QuickTimeEvent
     void Awake()
     {
 
-        transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), 0);
+        transform.position = new Vector3(Random.Range(0,Screen.width*0.8f), Random.Range(0,Screen.height*0.8f), 0);
+
     }
 
     // Update is called once per frame

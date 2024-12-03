@@ -24,7 +24,7 @@ public class KeyPressEvent : QuickTimeEvent
     {
         image = GetComponent<Image>();
 
-        transform.position = new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), 0);
+        transform.position = new Vector3(Random.Range(0,Screen.width*0.8f), Random.Range(0,Screen.height*0.8f), 0);
 
         int index = Random.Range(0, keySprites.Count);
         image.sprite = keySprites[index];
