@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     public Text timerText;
     private float currentTime = 0f;
-    private float startTime = 7 * 3600 + 59 * 60 + 30;
+    private float startTime = 7 * 3600 + 59 * 60 + 45;
     private float endTime = 8 * 3600;
 
     void Start()
@@ -27,6 +28,7 @@ public class Timer : MonoBehaviour
         {
             currentTime = endTime;
             UpdateTimerText(currentTime);
+            RestartScene();
         }
     }
 
@@ -37,5 +39,10 @@ public class Timer : MonoBehaviour
         int seconds = (int)timeInSeconds % 60;
 
         timerText.text = string.Format("{0:00}:{1:00}:{2:00} AM", hours, minutes, seconds);
+    }
+
+    void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

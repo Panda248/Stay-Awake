@@ -9,6 +9,9 @@ public class CharMove : MonoBehaviour
     int speed = 15;
     bool slowed = false;
 
+    [SerializeField] private float minZ = -4f;
+    [SerializeField] private float maxZ = 4f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,11 @@ public class CharMove : MonoBehaviour
             Vector2 left = new Vector2(-1, 0);
             transform.Translate(left * 7 * Time.deltaTime);
         }
+
+        Vector3 currentPosition = transform.position;
+        currentPosition.z = Mathf.Clamp(currentPosition.z, minZ, maxZ);
+        transform.position = currentPosition;
+
     }
 
     public void OnTriggerEnter(Collider other)
