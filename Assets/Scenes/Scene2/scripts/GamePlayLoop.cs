@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GamePlayLoop : MonoBehaviour
 {
-    [SerializeField]
+    [Tooltip("Use for debugging, not for gameplay. Win Condition should be dependent on when the audio finishes playing")]
     public int winTimer = 50000;
     [SerializeField]
     public int maxSleepiness = 10000;
@@ -22,6 +22,9 @@ public class GamePlayLoop : MonoBehaviour
 
     [SerializeField]
     float deltaSleepEase = 10;
+
+    [SerializeField]
+    AudioSource lectureAudio;
 
     float deltaSleepy = 0;
 
@@ -61,7 +64,7 @@ public class GamePlayLoop : MonoBehaviour
             }
         }
 
-        if(winTimer-- <= 0)
+        if(winTimer-- <= 0 || !lectureAudio.isPlaying)
         {
             SceneManager.LoadScene(winScene);
         }

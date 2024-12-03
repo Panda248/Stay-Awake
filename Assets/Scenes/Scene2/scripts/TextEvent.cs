@@ -3,17 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TextEvent : MonoBehaviour
+public class TextEvent : QuickTimeEvent
 {
-    [SerializeField]
-    int timer = 500;
-
-    [SerializeField]
-    int wakePower = 100;
-
-    [SerializeField]
-    GamePlayLoop GamePlayLoop;
-
     [SerializeField]
     List<string> texts = new List<string>()
     {
@@ -23,17 +14,15 @@ public class TextEvent : MonoBehaviour
         "Okay",
         "Pol Pot"
     };
-
+    
     private TMP_InputField inputField;
     private TextMeshProUGUI textMesh;
-    private Animator animator;
 
     // Start is called before the first frame update
     void Awake()
     {
         inputField = transform.GetComponentInChildren<TMP_InputField>();
         textMesh = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        animator = GetComponent<Animator>();
 
         transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), 0);
 
@@ -43,24 +32,13 @@ public class TextEvent : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (inputField.text.Equals(textMesh.text))
+        if (inputField.text.Equals(textMesh.text) && active)
         {
-            animator.SetTrigger("exit");
+            playWin();
         }
-        if(timer-- <= 0)
+        if(timer-- <= 0 && active)
         {
-            animator.SetTrigger("expire");
+            playLose();
         }
-    }
-
-    void onCompletion()
-    {
-        GamePlayLoop.ReduceSleepiness(wakePower);
-        onExpire();
-    }
-
-    void onExpire()
-    {
-        Destroy(gameObject);
     }
 }
