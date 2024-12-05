@@ -203,7 +203,7 @@ Material:
     - _Ceramictiles2color: {r: 0.7924528, g: 0.3776169, b: 0.1682093, a: 1}
     - _Ceramictiles3color: {r: 0.4677838, g: 0.3813261, b: 0.2501584, a: 1}
     - _Coatofarmscolor: {r: 1, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.27058825}
     - _EmissionColor: {r: 0.8867924, g: 0.7144535, b: 0.7144535, a: 1}
     - _Exteriorwalls1colour: {r: 0.6792453, g: 0.6010633, b: 0.5863296, a: 1}
     - _Exteriorwalls2color: {r: 0.3524386, g: 0.6133218, b: 0.754717, a: 1}
