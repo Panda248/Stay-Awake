@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AJ
+  - Building
   layers:
   - Default
   - TransparentFX
